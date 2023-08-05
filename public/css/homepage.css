@@ -1,6 +1,14 @@
 :root {
-  --g1: rgb(98, 0, 234);
-  --g2: rgb(236, 64, 122);
+  --g1: rgb(0, 28, 48);
+  --g2: rgb(29, 92, 87);
+  --LightText: rgb(218, 255, 251);
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none !important;
+  list-style: none;
+  font-family: "Roboto", sans-serif;
 }
 
 @keyframes background-pan {
@@ -13,8 +21,8 @@
   }
 }
 
-body {
-  animation: background-pan 10s linear infinite;
+#section1 {
+  animation: background-pan 20s linear infinite;
   background: linear-gradient(to right, var(--g1), var(--g2), var(--g1));
   background-size: 200%;
   height: 100vh;
@@ -22,19 +30,11 @@ body {
   margin: 0px;
 }
 
-body.toggled {
+#section1.toggled {
   animation: none;
 }
 
-body.toggled > #title {
-  opacity: 0;
-}
-
-body.toggled > #icon {
-  opacity: 1;
-}
-
-body.toggled > #tiles > .tile:hover {
+#section1.toggled > #tiles > .tile:hover {
   opacity: 0.1 !important;
 }
 
@@ -78,11 +78,11 @@ body.toggled > #tiles > .tile:hover {
   font-size: 6vw;
   margin: 0px;
   pointer-events: none;
-  transition: opacity 1200ms ease;
+  transition: opacity 1600ms ease;
   width: 50vw;
   z-index: 3;
 }
-
+ 
 #title > .fancy {
   color: var(--g2);
   font-family: "Dancing Script", cursive;
@@ -90,65 +90,51 @@ body.toggled > #tiles > .tile:hover {
   line-height: 0.9em;
 }
 
-#icon {
-  color: rgba(255, 255, 255, 0.15);
-  font-size: 80vmin;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 1200ms ease;
-  z-index: 1;
-}
-
-/* -- YouTube Link Styles -- */
-
-body.menu-toggled > .meta-link > span {
-  color: rgb(30, 30, 30);
-}
-
-#source-link {
-  bottom: 60px;
-}
-
-#source-link > i {
-  color: rgb(94, 106, 210);
-}
-
-#yt-link > i {
-  color: rgb(239, 83, 80);
-}
-
-.meta-link {
+#navBar {
+  margin: 0.5%;
+  position: absolute;
+  z-index: 4;
+  background-color: #ffffff20;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.496);
+  border-radius: 8px;
+  width: 99%;
+  height: 85px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  backdrop-filter: blur(3px);
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 6px;
-  bottom: 10px;
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  display: inline-flex;
-  gap: 5px;
-  left: 10px;
-  padding: 10px 20px;
-  position: fixed;
+  color: var(--LightText);
+  font-size: 20px;
+}
+
+#navBar ul,
+#logo,
+#shoppingCartDiv {
+  padding: 45px;
+}
+
+#navBar ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+#navBar ul li a {
+  color: var(--LightText);
   text-decoration: none;
-  transition: background-color 400ms, border-color 400ms;
-  z-index: 10000;
+}
+#navBar ul li {
+  padding: 25px;
 }
 
-.meta-link:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+#shoppingBagIMG {
+  height: 30px;
+  width: 25px;
+  margin-left: 15px;
 }
-
-.meta-link > i,
-.meta-link > span {
-  height: 20px;
-  line-height: 20px;
-}
-
-.meta-link > span {
-  color: white;
-  font-family: "Rubik", sans-serif;
-  transition: color 400ms;
+#shoppingCartDiv {
+  display: flex;
+  width: 2%;
+  justify-content: center;
+  align-items: flex-end;
 }

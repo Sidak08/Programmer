@@ -1,36 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./public/css/homepage.css">
-    <script src="./js/homePage.js" defer></script>
-</head>
+    <link rel="stylesheet" href="../css/homepage.css" />
+    <script src="../js/homePage.js" defer></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+      defer
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
-    <div id="backgound">
-        <div id="tiles"></div>
+  <body>
+    <div id="section1">
+      <nav id="navBar">
+        <div id="logo">logo</div>
 
-        <h1 id="title" class="centered">
-            The name of the game is
-            <span class="fancy">Chess</span>.
-        </h1>
+        <ul>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Hire</a></li>
+          <li><a href="#">Survey</a></li>
+        </ul>
 
-        <i id="icon" class="fa-solid fa-chess centered"></i>
+        <div id="shoppingCartDiv">
+          <div>Cart</div>
+          <img
+            src="../css/290141_bag_case_handbag_purse_shopping_icon.png"
+            alt=""
+            srcset=""
+            id="shoppingBagIMG"
+          />
+        </div>
+      </nav>
 
-        <a id="source-link" class="meta-link" href="https://cdpn.io/YzXOGpm" target="_blank">
-            <i class="fa-solid fa-link"></i>
-            <span>Source</span>
-        </a>
-
-        <a id="yt-link" class="meta-link" href="https://youtu.be/bAwEj_mSzOs" target="_blank">
-            <i class="fa-brands fa-youtube"></i>
-            <span>5 min tutorial</span>
-        </a>
+      <div id="tiles"></div>
     </div>
-</body>
-
+  </body>
 </html>

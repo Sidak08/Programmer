@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/Sidak08/Programmer#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "animejs": "^3.2.1",
+    "express": "^4.18.2",
+    "gsap": "^3.12.2",
+    "thee": "^1.1.2"
   }
 }
