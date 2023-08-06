@@ -1,3 +1,10 @@
+// import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Register ScrollTrigger plugin with GSAP
+// gsap.registerPlugin(ScrollTrigger);
+
+
 const wrapper = document.getElementById("tiles");
 
 let columns = 0,
@@ -80,3 +87,67 @@ setTimeout(simulateRandomClick, 1000);
 setTimeout(simulateRandomClick, 3500);
 
 setInterval(backgroundTiles, 9000);
+
+// animating phone thingy 
+
+const canvas = document.getElementById("canvas")
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const context = canvas.getContext("2d");
+const frameCount = 30;
+
+const currentFrame = (index) => `../images/phoneAnimation/${(index + 1).toString()}.png`; // the images do not exist 
+// public/images/phoneAnimation/1.png
+
+
+const images = [];
+let ball = { frame: 0 };
+
+for (let i = 0; i < frameCount; i++) {
+  const img = new Image();
+  img.src = currentFrame(i);
+  console.log(currentFrame(i));
+  images.push(img);
+}
+
+gsap.to(ball, {
+  frame: frameCount - 1,
+  snap: "frame",
+  ease: "none",
+  scrollTrigger: {
+    scrub: 0.5,
+    pin: "canvas",
+    end: "500%",
+  },
+  onUpdate: render,
+});
+
+gsap.fromTo(
+  ".ball-text",
+  {
+    opacity: 0,
+  },
+  {
+    opacity: 1,
+    scrollTrigger: {
+      scrub: 1,
+
+      start: "50%",
+      end: "60%",
+    },
+    onComplete: () => {
+      gsap.to(".ball-text", { opacity: 0 });
+    },
+  }
+);
+
+images[0].onload = render;
+
+function render() {
+  context.canvas.width = images[0].width;
+  context.canvas.height = images[0].height;
+
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  context.drawImage(images[ball.frame], 0, 0);
+}
