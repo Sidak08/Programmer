@@ -138,3 +138,11 @@
   justify-content: center;
   align-items: flex-end;
 }
+#canvas {
+  z-index: 5;
+  height: 1066px;
+  width: 600px; 
+  position: absolute;
+  right: 0px;
+  top: 00px;
+}
